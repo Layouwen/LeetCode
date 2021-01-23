@@ -1,3 +1,7 @@
+/**
+ * 判断重复字符的个数
+ * @param s
+ */
 const lengthOfLongestSubstring = (s) => {
   // @ts-ignore
   const occ = new Set();
