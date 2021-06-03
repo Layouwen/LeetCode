@@ -22,16 +22,16 @@ public:
     if (head == nullptr)
       return false;
     // 定义两个指针分别指向第一个和第二个
-    ListNode *p = head, *q = head->next;
+    ListNode *slow = head, *fast = head->next;
     // 开始循环链表, 如果他们相遇了则停止。如果其中一个为空则到达链表末尾，则停止
-    while (p != q && q && q->next)
+    while (slow != fast && fast && fast->next)
     {
       // 持续让 p 和 q 往后走，p 每次走一步， q 每次走两步
-      p = p->next;
-      q = q->next->next;
+      slow = slow->next;
+      fast = fast->next->next;
     }
     // 如果 q 和 q 的下一个有值。则表示有环
-    return q && q->next;
+    return fast && fast->next;
   }
 };
 // @lc code=end
